@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Фабрика скинали</title>
-  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -44,7 +43,7 @@
             <a class="navbar__phone" href="tel:+375447425678">+375447425678</a>
             <a class="navbar__email navbar__small-text" href="mailto:info@mail.com">info@mail.com</a>
           </div>
-          <button class="button-o navbar__button">Получить консультацию</button>
+          <a href="#offer" class="button-o navbar__button">Получить консультацию</a>
         </div>
       </div>
     </div>
@@ -52,13 +51,13 @@
       <div class="container">
         <h1 class="hero-title">Гарантия <br> минимальной цены <br> на скинали</h1>
         <span class="hero__subtitle">от 3 000 р/м2</span>
-        <button class="button hero__button">Заказать скинали</button>
+        <a href="#offer" class="button hero__button">Заказать скинали</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="offer bg-secondary">
+    <section class="offer bg-secondary" id="offer">
       <div class="container">
         <div class="offer__block offer-block offer-block_calc-bg">
           <h2 class="offer__title">Оставьте заявку на расчет</h2>
@@ -67,7 +66,14 @@
             <div class="form__row">
               <div class="form__group">
                 <label for="" class="form__label">Вид стекла</label>
-                <input type="text" class="input form__input">
+                <input type="hidden" name="type" id="select-type" value="С печатью">
+                <div class="select form__select">
+                  <div class="select_checked">С печатью</div>
+                  <ul class="select__dropdown">
+                    <li class="select__option" data-value="С печатью">С печатью</li>
+                    <li class="select__option" data-value="Без печати">Без печати</li>
+                  </ul>
+                </div>
               </div>
               <div class="form__group">
                 <label for="" class="form__label">Ширина, см</label>
@@ -401,6 +407,42 @@
       </div>
     </section>
 
+    <section class="section before">
+      <div class="container">
+        <h2 class="section-title section__title">До и после</h2>
+        <div class="before-slider-wrap">
+          <div class="before-slider">
+            <div class="before-slider__item">
+              <div class="before-after">
+                <img src="img/before-slider/sample-before.png" alt="slider">
+                <img src="img/before-slider/sample-after.png" alt="slider">
+              </div>
+            </div>
+            <div class="before-slider__item">
+              <div class="before-after">
+                <img src="img/before-slider/sample-before.png" alt="slider">
+                <img src="img/before-slider/sample-after.png" alt="slider">
+              </div>
+            </div>
+            <div class="before-slider__item">
+              <div class="before-after">
+                <img src="img/before-slider/sample-before.png" alt="slider">
+                <img src="img/before-slider/sample-after.png" alt="slider">
+              </div>
+            </div>
+          </div>
+          <div class="before-slider-arrows">
+            <button class="arrow arrow-left">
+              <img src="img/before-slider/left.png" alt="arrow">
+            </button>
+            <button class="arrow arrow-right">
+              <img src="img/before-slider/right.png" alt="arrow">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section reviews">
       <div class="container">
         <h2 class="section-title section__title">Отзывы наших клиентов</h2>
@@ -443,7 +485,7 @@
                 <input type="text" class="input form__input" placeholder="Ваше имя">
               </div>
               <div class="form__group">
-                <input type="text" class="input form__input" placeholder="Ваш телефон">
+                <input type="tel" class="input form__input" placeholder="Ваш телефон">
               </div>
               <div class="form__group">
                 <input type="text" class="input form__input" style="border-right-width: 1px" placeholder="Ваша цена">
@@ -505,8 +547,7 @@
     </section>
 
     <div class="map" id="map">
-      <script type="text/javascript" charset="utf-8" async
-        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A305aa8f2b9c94d215abe8bbf3a178c1f3f8fafe6dfc99abbbe1d4095095b9a8b&amp;width=100%25&amp;height=410&amp;lang=ru_RU&amp;scroll=false"></script>
+      
     </div>
 
     <section class="section questions">
@@ -554,5 +595,11 @@
 
  <!-- Подключение виджета обратной связи -->
 <script type="text/javascript" src="https://spikmi.com/Widget?Id=6323"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="js/jquery.event.move.js"></script>
+<script src="js/jquery.twentytwenty.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/jquery.maskedinput.min.js"></script>
 </body>
 </html>
